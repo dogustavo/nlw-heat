@@ -6,8 +6,20 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
+
+#### Backend
+
 - Node
-- Typescript
 - Express
 - Socket.io
 - Prisma
+
+#### Frontend (AINDA EM CONSTRUÇÃO)
+
+- Nextjs
+- Styled Components
+
+#### Frontend e Backend
+
+- Typescript
+- Axios
