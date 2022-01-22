@@ -1,13 +1,24 @@
 import { Fragment } from 'react'
-import Seo from 'components/seo'
-import { Container } from 'components'
 
-export default function Home() {
+import { Container, Seo, LoginBox, MessageList } from 'components'
+
+import * as S from './styles'
+
+import IMessages from 'types'
+
+export type IProps = {
+  data: IMessages[]
+}
+
+export default function Home({ data }: IProps) {
   return (
     <Fragment>
       <Seo session={'Início'} />
       <Container>
-        <h1>Boilerplate Nextjs</h1>
+        <S.ContentWrapper>
+          <MessageList data={data} />
+          <LoginBox />
+        </S.ContentWrapper>
       </Container>
     </Fragment>
   )

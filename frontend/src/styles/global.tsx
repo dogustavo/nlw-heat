@@ -7,16 +7,19 @@ export default createGlobalStyle`
     *::after {
         outline: 0;
         box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
     }
     html,
     body {
-        font-family: 'Inter', 'sans-serif';
+        font-family: 'Roboto', 'sans-serif';
         font-weight: 400;
         font-size: 1rem;
         letter-spacing: 2px;
         line-height: normal;
-        margin: 0px;
-        padding: 0px;
+        color: #e1e1e6;
+
+        background-color: #121214;
         scroll-behavior: smooth;
         overflow-x: hidden;
         height: 100%;

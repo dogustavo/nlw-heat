@@ -12,7 +12,6 @@ export default function Seo({ session, description, url, preview }: HeadProps) {
   return (
     <NextHead>
       <title>Boilerplate - {session}</title>
-      <link rel="shortcut icon" href="/favicon.png" />
       <link rel="shortcut icon" href="/img/icon-512.png" />
 
       <link rel="apple-touch-icon" href="/img/icon-512.png" />
