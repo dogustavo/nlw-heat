@@ -54,3 +54,6 @@ export const User = styled.div`
     border: 4px solid #121214;
   }
 `
+export const Error = styled.p`
+  font-size: 16px;
+`

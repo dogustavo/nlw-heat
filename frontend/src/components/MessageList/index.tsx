@@ -2,9 +2,10 @@ import * as S from './styles'
 import IMessages from 'types'
 
 interface IMessagesList {
-  data: IMessages[]
+  data?: IMessages[]
+  error?: boolean
 }
-export default function MessageList({ data }: IMessagesList) {
+export default function MessageList({ data, error }: IMessagesList) {
   const renderMessageItens = () => {
     return data?.map((el) => (
       <S.MessageItem key={el.id}>
@@ -26,7 +27,15 @@ export default function MessageList({ data }: IMessagesList) {
   return (
     <S.Wrapper>
       <img src="img/assets/logo.svg" alt="Imagem Logo 2021" />
-      <S.MessageList>{renderMessageItens()}</S.MessageList>
+      {!error ? (
+        <S.MessageList>{renderMessageItens()}</S.MessageList>
+      ) : (
+        <S.MessageList>
+          <S.Error>
+            Não foi possível renderizar as menssagens no momento.
+          </S.Error>
+        </S.MessageList>
+      )}
     </S.Wrapper>
   )
 }

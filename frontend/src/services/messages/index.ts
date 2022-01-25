@@ -1,3 +1,4 @@
+import axios from 'axios'
 import api from 'services'
 
 import IMessages from 'types'
@@ -8,6 +9,8 @@ export const getMessages = async () => {
 
     return response.data
   } catch (error) {
-    return error
+    if (axios.isAxiosError(error)) {
+      throw error
+    }
   }
 }

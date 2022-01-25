@@ -7,16 +7,17 @@ import * as S from './styles'
 import IMessages from 'types'
 
 export type IProps = {
-  data: IMessages[]
+  data?: IMessages[]
+  error?: boolean
 }
 
-export default function Home({ data }: IProps) {
+export default function Home({ data, error }: IProps) {
   return (
     <Fragment>
       <Seo session={'Início'} />
       <Container>
         <S.ContentWrapper>
-          <MessageList data={data} />
+          <MessageList data={data} error={error} />
           <LoginBox />
         </S.ContentWrapper>
       </Container>

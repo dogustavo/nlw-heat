@@ -7,18 +7,28 @@ import IMessages from 'types'
 
 interface IProps {
   data: IMessages[]
+  error: boolean
 }
 
-export default function Home({ data }: IProps) {
-  return <HomePage data={data} />
+export default function Home({ data, error }: IProps) {
+  return <HomePage data={data} error={error} />
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await getMessages()
+  try {
+    const response = await getMessages()
 
-  return {
-    props: {
-      data: response
+    return {
+      props: {
+        data: response,
+        error: false
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        error: true
+      }
     }
   }
 }
