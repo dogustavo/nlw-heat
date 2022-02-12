@@ -1,11 +1,20 @@
 import { Router } from 'express'
-import { AuthUserController } from './controllers/AuthUserController'
-import { CreateMessageController } from './controllers/CreateMessageController'
-import { GetLastMessagesController } from './controllers/GetLastMessagesController'
-import { ProfileUserController } from './controllers/ProfileUserController'
+import {
+  AuthUserController,
+  CreateMessageController,
+  GetLastMessagesController,
+  ProfileUserController,
+  GithubRedirectControler
+} from './controllers'
 import { ensureAuth } from './middleware/ensureAuth'
 
 const router = Router()
+
+router.get('/github', new GithubRedirectControler().handle)
+router.get('/signin/callback', (request, response) => {
+  const { code } = request.query
+  return response.json(code)
+})
 
 router.post('/authenticate', new AuthUserController().handle)
 router.post(
