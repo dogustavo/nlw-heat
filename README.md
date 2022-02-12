@@ -18,6 +18,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Nextjs
 - Styled Components
+- Nookies
 
 #### Frontend e Backend
 
