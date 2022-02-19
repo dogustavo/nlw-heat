@@ -14,3 +14,15 @@ export const getMessages = async () => {
     }
   }
 }
+
+export const sendMessages = async (message: string) => {
+  try {
+    const response = await api.post('/messages', { message })
+
+    return response.data
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error
+    }
+  }
+}

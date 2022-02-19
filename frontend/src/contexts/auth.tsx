@@ -36,6 +36,7 @@ export function AuthProvider({ children }: IAuthProvider) {
       if (data) {
         const { token, user } = data
 
+        api.defaults.headers.common.authorization = `Bearer ${token}`
         setCookie(null, 'userToken', token, {
           maxAge: 60 * 60 * 24 * 31,
           path: '/'

@@ -7,7 +7,6 @@ import { VscGithub } from 'react-icons/vsc'
 export default function LoginBox() {
   const { user, signInUrl } = useContext(AuthContext)
 
-  console.log(user)
 
   return (
     <S.Wrapper>

@@ -1,10 +1,11 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 
-import { Container, Seo, LoginBox, MessageList } from 'components'
+import { Container, Seo, LoginBox, MessageList, MessageForm } from 'components'
 
 import * as S from './styles'
 
 import IMessages from 'types'
+import { AuthContext } from 'contexts/auth'
 
 export type IProps = {
   data?: IMessages[]
@@ -12,13 +13,15 @@ export type IProps = {
 }
 
 export default function Home({ data, error }: IProps) {
+  const { user } = useContext(AuthContext)
+
   return (
     <Fragment>
       <Seo session={'Início'} />
       <Container>
-        <S.ContentWrapper>
+        <S.ContentWrapper isAuth={!!user}>
           <MessageList data={data} error={error} />
-          <LoginBox />
+          {!!user ? <MessageForm /> : <LoginBox />}
         </S.ContentWrapper>
       </Container>
     </Fragment>
