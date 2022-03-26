@@ -17,7 +17,7 @@ socket.on('new_message', (newMessage: IMessages) => {
 })
 
 export default function MessageList({ data, error }: IMessagesList) {
-  const [messages, setMessages] = useState<IMessages[] | undefined>(data)
+  const [messages, setMessages] = useState<IMessages[]>(data)
 
   useEffect(() => {
     setInterval(() => {

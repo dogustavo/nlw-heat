@@ -10,7 +10,6 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-
 #### Backend
 
 - Node
@@ -24,7 +23,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Styled Components
 - Nookies
 
-#### Frontend e Backend
+#### Frontend/Backend
 
 - Typescript
 - Axios
